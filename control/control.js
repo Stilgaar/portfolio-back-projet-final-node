@@ -5,7 +5,7 @@ const post = {
 
         let { noms, email, title, message } = req.body; 
 
-        if(!noms || !email || !message) {res.send('err')}
+        if(!noms || !email || !message) {res.send('empty')}
 
         MsgModel.create({
             noms,
