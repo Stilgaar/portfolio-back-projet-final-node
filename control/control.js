@@ -1,11 +1,10 @@
 const MsgModel = require('../model/model')
 
 const post = {
-    newMessage(req,res,next) {
+    newMessage(req, res, next) {
 
-        let { noms, email, title, message } = req.body; 
-
-        if(!noms || !email || !message) {res.send('emptyfield')}
+        let { noms, email, title, message } = req.body;
+        if (!noms || !email || !message) { res.send('emptyfield') }
 
         MsgModel.create({
             noms,
@@ -13,6 +12,12 @@ const post = {
             title,
             message
         }).then(() => res.send('done'))
-    .catch((err) => res.send(err)) }}
+            .catch((err) => res.send(err))
+    },
 
-module.exports = post; 
+    getMsg(req, res, next) {
+        MsgModel.find({}).then((data) => res.send(data))
+    }
+}
+
+module.exports = post;
