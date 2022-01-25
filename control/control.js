@@ -11,7 +11,7 @@ const post = {
             email,
             title,
             message
-        }).then(() => res.send('done'))
+        }).then(() => res.send('Message Envoyé'))
             .catch((err) => res.send(err))
     },
 
