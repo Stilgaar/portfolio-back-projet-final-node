@@ -4,7 +4,7 @@ const post = {
     newMessage(req, res, next) {
 
         let { noms, email, title, message } = req.body;
-        if (!noms || !email || !message) { res.send('emptyfield') }
+        if (!noms || !email || !message) { res.send('Veuillez renseigner toutes les champs') }
 
         MsgModel.create({
             noms,
